@@ -62,6 +62,14 @@ export const roProvider = createROProvider()
 export const roSigner = roProvider
 
 function getNetworkName() {
+    // This is because github pages has no support for subdomains
+    let qs = window.location.search.split("=")
+    if (qs.length == 2) {
+        if (qs[0] == "?network") {
+            return qs[1]
+        }
+    }
+
     let subdomain = window.location.host.split('.')[0]
     let network = ["local", "rinkeby", "test"].includes(subdomain)?subdomain:"matic"
     if (network == "rinkeby")
