@@ -19,4 +19,4 @@ testnet:
 	@sudo ${PARCEL} serve --port 80 --host "test.${IP}.nip.io" index.html
 
 build:
-	@sudo ${PARCEL} build index.html
+	@sudo ${PARCEL} build --dist-dir docs index.html 
