@@ -52,11 +52,11 @@ export async function connectWalletWithMetaMask() {
 export async function connectWalletWithWalletConnect(reuseConnection) {
     localStorage.setItem('connectWith', 'no')
     let rpc = {}
-    rpc[providerConfig.id] = providerConfig.wallet_add_ethereum_chain.rpcUrls[0]
+    rpc[providerConfig.id] =  providerConfig.url || providerConfig.wallet_add_ethereum_chain.rpcUrls[0]
     
     let wcprovider = new WalletConnectProvider({rpc: rpc})
 
-    if (reuseConnection === true) {
+    if (reuseConnection !== true) {
         wcprovider.disconnect().then(console.log).catch(console.error)
     }
     connectModal.hide()
