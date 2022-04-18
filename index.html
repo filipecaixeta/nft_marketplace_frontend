@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/headers.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Marketplace</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Admin</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Bsucar">
+            </form>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-warning" id="connect-btn" onclick="connectWalletBtn()">Conectar Carteira</button>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="album-container">
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade bg-secondary py-5"
+        id="buy-method-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="buy-method-modal"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog">
+            <div class="modal-content rounded-6 shadow">
+            <div class="modal-body p-5">
+                <h2 class="fw-bold mb-0">Metodo de Compra</h2>
+
+                <ul class="d-grid gap-4 my-5 list-unstyled">
+                <li class="d-flex gap-4" style="cursor: pointer;" id="buy-with-pix">
+                    <img src="assets/pix.png" class="bi text-muted flex-shrink-0" width="150" height="84">
+                    <div>
+                        <h5 class="mb-0">Faça uma transferencia pix</h5>
+                    </div>
+                </li>
+                <li class="d-flex gap-4" style="cursor: pointer;" id="buy-with-crypto">
+                    <img src="assets/matic.png" class="bi text-muted flex-shrink-0" width="150" height="84">
+                    <div>
+                        <h5 class="mb-0">Pague com crypto utilizando Matic na rede Polygon</h5>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                Fechar
+                </button>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade bg-secondary py-5"
+        id="connect-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="connect-modal"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog">
+            <div class="modal-content rounded-6 shadow">
+            <div class="modal-body p-5">
+                <h2 class="fw-bold mb-0">Conectar com</h2>
+
+                <ul class="d-grid gap-4 my-5 list-unstyled">
+                <li class="d-flex gap-4" style="cursor: pointer;" id="connectWalletWithMetaMask">
+                    <img src="assets/metamask-alternative.webp" class="bi text-muted flex-shrink-0" width="38" height="34">
+                    <div>
+                        <h5 class="mb-0">MetaMask</h5>
+                    </div>
+                </li>
+                <li class="d-flex gap-4" style="cursor: pointer;" id="connectWalletWithWalletConnect">
+                    <img src="assets/walletconnect-alternative.webp" class="bi text-muted flex-shrink-0" width="38" height="34">
+                    <div>
+                        <h5 class="mb-0">WalletConnect</h5>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                Fechar
+                </button>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade bg-secondary py-5"
+        id="connect-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="connect-modal"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog">
+            <div class="modal-content rounded-6 shadow">
+            <div class="modal-body p-5">
+                <h2 class="fw-bold mb-0">Conectar com</h2>
+
+                <ul class="d-grid gap-4 my-5 list-unstyled">
+                <li class="d-flex gap-4" style="cursor: pointer;" id="connectWalletWithMetaMask" onclick="connectWalletWithMetaMask()">
+                    <img src="assets/metamask-alternative.webp" class="bi text-muted flex-shrink-0" width="38" height="34">
+                    <div>
+                        <h5 class="mb-0">MetaMask</h5>
+                    </div>
+                </li>
+                <li class="d-flex gap-4" style="cursor: pointer;" id="connectWalletWithWalletConnect" onclick="connectWalletWithWalletConnect()">
+                    <img src="assets/walletconnect-alternative.webp" class="bi text-muted flex-shrink-0" width="38" height="34">
+                    <div>
+                        <h5 class="mb-0">WalletConnect</h5>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                Fechar
+                </button>
+            </div>
+            </div>
+        </div>
+      </div>
+
+    </main>
+    
+    <script src="src/index.js" type="module"></script>
+</body>
+</html>
