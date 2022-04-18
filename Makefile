@@ -18,5 +18,8 @@ local:
 testnet:
 	@sudo ${PARCEL} serve --port 80 --host "test.${IP}.nip.io" index.html
 
+testnet-https:
+	@sudo ${PARCEL} serve --https --port 443 --host "test.${IP}.nip.io" index.html
+
 build:
 	@sudo ${PARCEL} build --dist-dir docs --public-url ./ index.html 

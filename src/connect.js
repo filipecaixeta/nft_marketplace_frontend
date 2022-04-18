@@ -1,5 +1,5 @@
 import { ethers } from "ethers"
-import { providerConfig, providersConfig } from './network'
+import { providerConfig } from './network'
 import WalletConnectProvider from "@walletconnect/web3-provider"
 
 export var rwProvider
@@ -54,14 +54,11 @@ export async function connectWalletWithWalletConnect(reuseConnection) {
     let rpc = {}
     rpc[providerConfig.id] = providerConfig.wallet_add_ethereum_chain.rpcUrls[0]
     
-    // for (const p of Object.values(providersConfig)) {
-    //     rpc[p.id] = p.wallet_add_ethereum_chain.rpcUrls[0]
-    // }
     let wcprovider = new WalletConnectProvider({rpc: rpc})
 
-    // if (reuseConnection === true) {
+    if (reuseConnection === true) {
         wcprovider.disconnect().then(console.log).catch(console.error)
-    // }
+    }
     connectModal.hide()
 
     try {
