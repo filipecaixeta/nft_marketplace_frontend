@@ -249,6 +249,11 @@
               "internalType": "address",
               "name": "to",
               "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string"
             }
           ],
           "internalType": "struct NFTTrader.MarketItem[]",
@@ -319,6 +324,11 @@
               "internalType": "address",
               "name": "to",
               "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string"
             }
           ],
           "internalType": "struct NFTTrader.MarketItem[]",
@@ -417,6 +427,11 @@
           "internalType": "address",
           "name": "to",
           "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
         }
       ],
       "stateMutability": "view",
@@ -615,5 +630,5 @@
       "type": "function"
     }
   ],
-  "address": "0xE09eB23D13bB77b9D45B83bF5BC3F4eE83250e46"
+  "address": "0x04b463b1EC34FE21Eda8F7401F8f98EbeC565815"
 }
