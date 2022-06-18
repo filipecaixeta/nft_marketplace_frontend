@@ -20,10 +20,10 @@ export const providersConfig = {
     },
     matic: {
         url: "https://polygon-rpc.com/",
-        api: "http://127.0.0.1:5000",
+        api: "https://market-place-server-prod-36okcil5ia-uc.a.run.app",
         id: 137,
         name: "matic",
-        alchemyapi_key: "", // TODO create api key
+        alchemyapi_key: "fnKSznc5UpD9G4W6sK6DhfrGNTP-SGbt",
         wallet_add_ethereum_chain: {
             chainId: '0x89',
             chainName: 'Matic Mainnet',

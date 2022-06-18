@@ -71,7 +71,7 @@ async function getAllListings() {
         listings.push(l)
         reqs.push(axios.get(l.uri))
     }
-    results = await Promise.all(
+    let results = await Promise.all(
         reqs.map(p => p.catch(e => e))
     )
     
