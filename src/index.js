@@ -88,7 +88,7 @@ async function getAllListings() {
 }
 
 async function main() {
-    setTimeout(initializeConnection(), 0)    
+    setTimeout(initializeConnection(), 0)
     listings = await getAllListings()
     createAlbum(listings)
 }
