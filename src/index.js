@@ -89,7 +89,7 @@ async function getAllListings() {
 
 async function main() {
     setTimeout(initializeConnection(), 0)
-    listings = await getAllListings()
+    let listings = await getAllListings()
     createAlbum(listings)
 }
 
